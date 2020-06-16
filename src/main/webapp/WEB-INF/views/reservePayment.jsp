@@ -112,7 +112,7 @@ function formCheck() {
 </c:choose>
 
 
-<form action="contcheck" method="post" onsubmit="return formCheck()">
+<form action="reservePaymentChk" method="post" onsubmit="return formCheck()">
 	<h3>${seatNum }번 타임 테이블</h3>
 	<c:import url="/WEB-INF/views/showTimeTable.jsp"/>
 

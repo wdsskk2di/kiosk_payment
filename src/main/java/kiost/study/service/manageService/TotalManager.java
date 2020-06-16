@@ -15,7 +15,7 @@ public class TotalManager implements Manager {
 		//일간 매출
 		ArrayList<ManagerDTO> day =  dao.day_total();
 		
-		int day_totalmoney = Integer.parseInt(day.get(0).getDayTotal()+day.get(1).getDayTotal()+day.get(2).getDayTotal());
+		int day_totalmoney = Integer.parseInt(day.get(0).getDayTotal()) + Integer.parseInt(day.get(1).getDayTotal()) + Integer.parseInt(day.get(2).getDayTotal());
 		int day_totaluser = day.get(0).getUserTotal()+day.get(1).getUserTotal()+day.get(2).getUserTotal();
 		
 		model.addAttribute("day_D", day.get(0));

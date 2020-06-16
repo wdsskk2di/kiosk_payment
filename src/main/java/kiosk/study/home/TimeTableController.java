@@ -9,13 +9,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.care.template.Constant;
 
-import kiost.study.service.KioskService;
 import kiost.study.service.ReserveStateService;
 
 @Controller
 public class TimeTableController {
-	
-	private KioskService ks;
+
 	public ReserveStateService rs = new ReserveStateService();
 	
 	public TimeTableController() {
@@ -39,8 +37,8 @@ public class TimeTableController {
 		return "showTimeTable";
 	}
 	
-	@GetMapping(value="reserveToday", produces = "application/json;charset=utf8")
-	public String reserveToday(@RequestParam("seatNum") String seatNum, @RequestParam("title") String title, Model model) {
+	@GetMapping(value="reserveDate", produces = "application/json;charset=utf8")
+	public String reserveDate(@RequestParam("seatNum") String seatNum, @RequestParam("title") String title, Model model) {
 		model.addAttribute("seatNum", seatNum);
 		model.addAttribute("title", title);
 

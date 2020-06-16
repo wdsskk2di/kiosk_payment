@@ -160,7 +160,7 @@ public class PaymentController {
 	}
 
 	//예약, 스터디룸 사용자가 결정한 값을 test_reserve DB 연결해서 사용 시간값 update
-	@GetMapping("reservePaymentChk")
+	@RequestMapping("reservePaymentChk")
 	public String reservePaymentChk(studyDTO dto, Model model) {
 		model.addAttribute("dto", dto);
 		
