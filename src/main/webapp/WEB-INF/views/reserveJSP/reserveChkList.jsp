@@ -7,6 +7,9 @@
 <meta charset="UTF-8">
 <title>결제 완료</title>
 
+<!-- 타이머(이벤트 미발생시 main화면 이동) -->
+<script type="text/javascript" src="resources/jsFile/timer.js"></script>
+
 <style type="text/css">
  .reserve_List{background-color: white; height:500px; width:600px; text-align: center; text-align: center; margin:0 auto; margin-top: 20%;}
  .reserve_List table{margin: 0 auto; width: 300px; border-collapse: collapse;}
@@ -21,6 +24,7 @@
  
  .reserve_List span{color: gray;}
 </style>
+
 </head>
 <body>
 <c:import url="/WEB-INF/views/default/header.jsp"/>

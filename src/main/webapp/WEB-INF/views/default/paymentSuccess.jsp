@@ -7,6 +7,9 @@
 <meta charset="UTF-8">
 <title>결제 완료</title>
 
+<!-- 타이머(이벤트 미발생시 main화면 이동) -->
+<script type="text/javascript" src="resources/jsFile/timer.js"></script>
+
 <style type="text/css">
  .payment_success{background-color: white; height:500px; width:600px; text-align: center; text-align: center; margin:0 auto; margin-top: 10%;}
  .payment_success table{margin: 0 auto;}

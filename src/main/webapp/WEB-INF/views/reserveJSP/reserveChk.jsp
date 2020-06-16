@@ -25,9 +25,6 @@
 <!-- 타이머(이벤트 미발생시 main화면 이동) -->
 <script type="text/javascript" src="resources/jsFile/timer.js"></script>
 <script type="text/javascript">
-$( document ).ready( function() {     
-	
-});
 
 //form submit시 미입력값 있으면 전송 막기
 function formCheck() {

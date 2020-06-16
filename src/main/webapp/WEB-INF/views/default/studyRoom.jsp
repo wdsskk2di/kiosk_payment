@@ -7,6 +7,9 @@
 <meta charset="UTF-8">
 <title>스터디룸 당일/예약</title>
 
+<!-- 타이머(이벤트 미발생시 main화면 이동) -->
+<script type="text/javascript" src="resources/jsFile/timer.js"></script>
+
 <style type="text/css">
 	.div_studyRoom{background-color: white; height:500px; width:600px; text-align: center; text-align: center; margin: 0 auto; margin-top: 20%;}
 	.div_studyRoom button{color:white; border:0; outline:0; background-color: #005766; width: 250px; height: 80px; margin: 3px; font-size: 20px; font-weight: bold;}	
