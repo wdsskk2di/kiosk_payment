@@ -28,16 +28,20 @@ public class TotalManager implements Manager {
 		ArrayList<String> month_day = dao.month_total_D();
 		model.addAttribute("month_D", month_day);
 		
-		ArrayList<String> month_reserve = dao.month_total_R();
-		model.addAttribute("month_R", month_reserve);
+		ArrayList<String> month_reserveR = dao.month_total_R();
+		model.addAttribute("month_R", month_reserveR);
+		
+		ArrayList<String> month_reserveS = dao.month_total_S();
+		model.addAttribute("month_S", month_reserveS);
 		
 		ArrayList<Integer>  month_total = new ArrayList<Integer>();
  		
 		for(int i = 0 ;i<month_day.size() ; i++) {
 			int a = Integer.parseInt(month_day.get(i));
-			int b = Integer.parseInt(month_reserve.get(i));
+			int b = Integer.parseInt(month_reserveR.get(i));
+			int c = Integer.parseInt(month_reserveS.get(i));
 			
-			month_total.add(a+b);
+			month_total.add(a+b+c);
 		}
 		
 		model.addAttribute("month_total", month_total);

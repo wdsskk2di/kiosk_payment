@@ -56,10 +56,17 @@
 		</c:forEach>
 		</tr>
 		
-		<tr><th>예약 좌석<br>스터디룸</th>
+		<tr><th>예약 좌석</th>
 		<c:forEach var="result" begin="0" end="11">
 			<c:if test="${month_R[result] == null}"><td>--</td></c:if>
 			<c:if test="${month_R[result] != null}"><td>${month_R[result]}원</td></c:if>		
+		</c:forEach>
+		</tr>
+		
+		<tr><th>스터디룸</th>
+		<c:forEach var="result" begin="0" end="11">
+			<c:if test="${month_S[result] == null}"><td>--</td></c:if>
+			<c:if test="${month_S[result] != null}"><td>${month_S[result]}원</td></c:if>		
 		</c:forEach>
 		</tr>
 		
@@ -76,7 +83,7 @@ var ctx = document.getElementById('myChart').getContext('2d');
 var chart = new Chart(ctx, {  type: 'line', 
 	data: { labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
 		datasets: [{ 
-			label: '월 매출 총액:', 
+			label: '월 매출 총액', 
 			backgroundColor: 'transparent', 
 			borderColor: 'red', 
 			data: ${month_total}  }]
