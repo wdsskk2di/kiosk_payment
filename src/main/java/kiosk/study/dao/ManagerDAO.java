@@ -195,21 +195,24 @@ public class ManagerDAO {
 				String sql_day = "select sum(totalmoney) as dayTotal, count(*) as userTotal from study_timeset " + 
 						"where todate=(SELECT TRUNC(SYSDATE, 'IW')+"+whatDay+" as weekday FROM DUAL)";
 				
-				String sql_reserve = "select sum(totalmoney) as daytotal, count(*) as userTotal from reserve_timeset " + 
+				String sql_reserve = "select sum(totalmoney) as dayTotal, count(*) as userTotal from reserve_timeset " + 
 						"where todate=(SELECT TRUNC(SYSDATE, 'IW')+"+whatDay+" as weekday FROM DUAL) and seatNum<41";
 				
-				String sql_studyroom = "select sum(totalmoney) as daytotal, count(*) as userTotal from reserve_timeset " + 
+				String sql_studyroom = "select sum(totalmoney) as dayTotal, count(*) as userTotal from reserve_timeset " + 
 						"where todate=(SELECT TRUNC(SYSDATE, 'IW')+"+whatDay+" as weekday FROM DUAL) and seatNum>40";
 				
 				ManagerDTO result1 = template.queryForObject(sql_day, new BeanPropertyRowMapper<ManagerDTO>(ManagerDTO.class));
+				if(result1.getDayTotal() == null ) {result1.setDayTotal("0");}
 				list.add(result1);
 				
 				ManagerDTO result2 = template.queryForObject(sql_reserve, new BeanPropertyRowMapper<ManagerDTO>(ManagerDTO.class));
+				if(result2.getDayTotal() == null ) {result2.setDayTotal("0");}
 				list.add(result2);
 				
 				ManagerDTO result3 = template.queryForObject(sql_studyroom, new BeanPropertyRowMapper<ManagerDTO>(ManagerDTO.class));
+				if(result3.getDayTotal() == null ) {result3.setDayTotal("0");}
 				list.add(result3);
-				
+
 			} catch (Exception e) {
 				e.printStackTrace();
 				System.out.println("일간 매출액 오류");
